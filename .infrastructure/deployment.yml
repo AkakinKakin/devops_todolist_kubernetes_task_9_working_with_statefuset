@@ -39,7 +39,7 @@ spec:
         env:
         - name: PYTHONUNBUFFERED
           valueFrom:
-            secretMapKeyRef:
+            secretKeyRef:
               name: app-config
               key: PYTHONUNBUFFERED
         - name: SECRET_KEY
@@ -49,22 +49,22 @@ spec:
               key: SECRET_KEY
         - name: DB_NAME 
           valueFrom:
-            secretMapKeyRef:
+            secretKeyRef:
               name: app-db-secret 
               key: NAME 
         - name: DB_USER
           valueFrom:
-            secretMapKeyRef:
+            secretKeyRef:
               name: app-db-secret 
               key: USER
         - name: DB_PASSWORD
           valueFrom:
-            configMapKeyRef:
+            configKeyRef:
               name: app-db-secret 
               key: PASSWORD
         - name: DB_HOST
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: app-db-secret 
               key: HOST
         ports:
